@@ -1,6 +1,6 @@
-# Retail Sales Analysis — SQL Portfolio Project
+# Retail Sales Analysis - SQL Portfolio Project
 
-A PostgreSQL project analyzing retail transaction data — covering database
+A PostgreSQL project analyzing retail transaction data - covering database
 design, data cleaning, and 15 business-driven SQL queries around sales,
 profitability, and customer behavior.
 
@@ -8,7 +8,7 @@ profitability, and customer behavior.
 
 This project simulates a real retail analytics workflow: set up a
 transactions database, check and clean the data, then answer business
-questions a retail analyst would actually be asked — top customers,
+questions a retail analyst would actually be asked - top customers,
 category profitability, spending segments, revenue trends, and more.
 
 **Tool used:** PostgreSQL / pgAdmin
@@ -31,23 +31,23 @@ A single transactions table, one row per sale:
 | `cogs` | NUMERIC | Cost of goods sold |
 | `total_sale` | NUMERIC | Total transaction value |
 
-Dataset: `Retail_sales_analysis.csv` — 2,000 raw transactions, 5
+Dataset: `Retail_sales_analysis.csv` - 2,000 raw transactions, 5
 categories (Beauty, Clothing, Electronics, Home, Sports), 495 unique
 customers.
 
 ## Project Workflow
 
-1. **Database & table setup** — created the database and defined the
+1. **Database & table setup** - created the database and defined the
    transactions table with appropriate data types and a primary key.
-2. **Data quality check** — scanned every column for `NULL` values before
+2. **Data quality check** - scanned every column for `NULL` values before
    any analysis, to avoid skewed results. Found 4 incomplete records
    (transaction IDs 57, 421, 1098, 1734) with a missing gender, age,
    category, or quantity value.
-3. **Data cleaning** — removed the 4 incomplete records, leaving 1,996
+3. **Data cleaning** - removed the 4 incomplete records, leaving 1,996
    clean transactions, and verified the row count.
-4. **Basic exploration** — unique customers, available categories,
+4. **Basic exploration** - unique customers, available categories,
    overall revenue/cost/profit.
-5. **Business analysis (15 queries)** — grouped into core questions and
+5. **Business analysis (15 queries)** - grouped into core questions and
    additional original analysis (see below).
 
 ## Key SQL Concepts Used
@@ -85,24 +85,24 @@ customers.
 
 ## Sample Insights
 
-*(Computed on the cleaned dataset — 1,996 transactions after removing 4
+*(Computed on the cleaned dataset - 1,996 transactions after removing 4
 incomplete records.)*
 
 - **Total revenue:** ₹8,48,740.87 | **Total cost:** ₹2,30,618.48 | **Total profit:** ₹6,18,122.39
-- **Top category by profit:** Electronics (₹3,00,711 profit) — also the largest
+- **Top category by profit:** Electronics (₹3,00,711 profit) - also the largest
   revenue contributor at 48.73% of total sales
 - **Highest profit margin category:** Clothing (74.15%), closely followed by
-  Electronics (72.71%) — margins across categories are fairly tight (72–74%)
+  Electronics (72.71%) - margins across categories are fairly tight (72-74%)
 - **Category selling the most units:** Clothing (1,463 units), despite
-  Electronics generating far more revenue — Clothing sells in higher volume
+  Electronics generating far more revenue - Clothing sells in higher volume
   at a lower price point
 - **Highest revenue weekday:** Wednesday (₹1,31,192.72), followed closely by Thursday
 - **Customer spending segments:** 479 Low / 16 Medium / 0 High (using the
-  default <5,000 / 5,000–10,000 / >10,000 thresholds) — the entire customer
+  default <5,000 / 5,000-10,000 / >10,000 thresholds) - the entire customer
   base falls under ₹10,000 in total spend, so these thresholds may need to be
-  scaled down for this dataset (e.g. <1,000 / 1,000–3,000 / >3,000) to get a
+  scaled down for this dataset (e.g. <1,000 / 1,000-3,000 / >3,000) to get a
   more meaningful split
-- **High-value transactions (> ₹5,000):** 0% — the largest single transaction
+- **High-value transactions (> ₹5,000):** 0% - the largest single transaction
   in this dataset is ₹4,491.40, so the >5,000 threshold doesn't apply here;
   a lower threshold (e.g. > ₹1,500) would be more useful for this data
 - **Most active customer:** Customer #1153 with 11 transactions totaling ₹7,967.94
@@ -115,9 +115,9 @@ incomplete records.)*
 4. Load `Retail_sales_analysis.csv` into the table (via pgAdmin's Import
    tool, or `COPY retail_sales_analysis FROM 'Retail_sales_analysis.csv'
    DELIMITER ',' CSV HEADER;`).
-5. Run the **Data Quality Check** and **Data Cleaning** sections — this
+5. Run the **Data Quality Check** and **Data Cleaning** sections - this
    will remove the 4 incomplete records.
-6. Run each numbered business question (Q1–Q15) individually to explore
+6. Run each numbered business question (Q1-Q15) individually to explore
    the results.
 
 ## Possible Next Steps
@@ -132,6 +132,6 @@ incomplete records.)*
 
 ## Files
 
-- `Retail_sales_analysis_project.sql` — full script: schema, cleaning, and all 15 queries
-- `Retail_sales_analysis.csv` — dataset used for the analysis above (2,000
+- `Retail_sales_analysis_project.sql` - full script: schema, cleaning, and all 15 queries
+- `Retail_sales_analysis.csv` - dataset used for the analysis above (2,000
   raw rows / 1,996 after cleaning)
